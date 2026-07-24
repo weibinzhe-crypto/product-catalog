@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品价目表</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题 -->
+        <header class="header">
+            <h1>产品价目表</h1>
+            <p class="subtitle">专业护肤 · 品质保障</p>
+        </header>
+
+        <!-- 搜索和筛选 -->
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索产品名称或条码...">
+                <button id="searchBtn">搜索</button>
+            </div>
+            <div class="brand-filters" id="brandFilters">
+                <!-- 品牌筛选按钮会动态生成 -->
+            </div>
+        </div>
+
+        <!-- 产品列表 -->
+        <div class="product-grid" id="productGrid">
+            <!-- 产品卡片会动态生成 -->
+        </div>
+
+        <!-- 加载状态 -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+
+        <!-- 无数据提示 -->
+        <div class="no-data" id="noData" style="display: none;">
+            <p>未找到匹配的产品</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

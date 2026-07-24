@@ -1,0 +1,16 @@
+{
+  "name": "product-catalog",
+  "version": "1.0.0",
+  "description": "产品价目展示网站 - 飞书多维表格 + Vercel",
+  "scripts": {
+    "dev": "npx serve .",
+    "fetch-data": "python fetch_feishu_data.py",
+    "build": "echo 'Static site, no build needed'"
+  },
+  "keywords": ["product", "catalog", "price", "feishu"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
