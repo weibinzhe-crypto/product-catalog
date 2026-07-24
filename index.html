@@ -3,74 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品价目表 | 专业护肤 · 品质保障</title>
+    <title>产品价目表</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
 </head>
 <body>
-    <!-- 顶部导航 -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <div class="logo">
-                <span class="logo-icon">✦</span>
-                <span class="logo-text">SKIN<span class="logo-accent">CARE</span></span>
-            </div>
-            <div class="nav-tagline">专业护肤 · 品质保障</div>
-        </div>
-    </nav>
-
-    <!-- 主内容区 -->
-    <main class="main">
-        <!-- Hero 区域 -->
-        <section class="hero">
-            <div class="hero-content">
-                <span class="hero-badge">PRODUCT CATALOG</span>
-                <h1 class="hero-title">产品价目表</h1>
-                <p class="hero-subtitle">甄选专业护肤品牌，为您的肌肤提供科学护理方案</p>
-            </div>
-        </section>
-
-        <!-- 搜索和筛选 -->
-        <section class="filters-section">
-            <div class="filters-inner">
-                <div class="search-box">
-                    <span class="search-icon">⌕</span>
-                    <input type="text" id="searchInput" placeholder="搜索产品名称或条码...">
-                </div>
-                <div class="brand-filters" id="brandFilters">
-                    <!-- 品牌筛选按钮会动态生成 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 产品统计 -->
-        <div class="stats-bar" id="statsBar">
-            <span class="stats-count">共 <strong id="productCount">0</strong> 款产品</span>
-        </div>
-
-        <!-- 产品列表 -->
-        <div class="product-grid" id="productGrid">
-            <!-- 产品卡片会动态生成 -->
-        </div>
-
-        <!-- 加载状态 -->
-        <div class="loading" id="loading">
-            <div class="loading-spinner"></div>
-            <p>加载中...</p>
-        </div>
-
-        <!-- 无数据提示 -->
-        <div class="no-data" id="noData" style="display: none;">
-            <div class="no-data-icon">∅</div>
-            <p>未找到匹配的产品</p>
-        </div>
-    </main>
-
-    <!-- 底部 -->
-    <footer class="footer">
-        <p>© 2026 专业护肤品牌集合</p>
-    </footer>
-
+    <header>
+        <h1>产品价目表</h1>
+        <input type="text" id="searchInput" placeholder="搜索产品...">
+    </header>
+    <div id="brandFilters"></div>
+    <div id="productGrid"></div>
+    <div id="loading" style="text-align:center;padding:40px;color:#999;">加载中...</div>
+    <div id="noData" style="display:none;text-align:center;padding:40px;color:#999;">未找到产品</div>
     <script src="app.js"></script>
 </body>
 </html>
