@@ -31,6 +31,9 @@ async function loadProducts() {
         products = await response.json();
         filteredProducts = [...products];
 
+        // 更新产品数量
+        document.getElementById('productCount').textContent = products.length;
+
         renderBrandFilters();
         renderProducts();
     } catch (error) {
@@ -43,9 +46,6 @@ async function loadProducts() {
 
 // 设置事件监听
 function setupEventListeners() {
-    // 搜索按钮
-    document.getElementById('searchBtn').addEventListener('click', handleSearch);
-
     // 搜索输入框回车
     document.getElementById('searchInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -76,12 +76,15 @@ function handleSearch() {
         });
     }
 
+    // 更新产品数量
+    document.getElementById('productCount').textContent = filteredProducts.length;
+
     renderProducts();
 }
 
 // 渲染品牌筛选按钮
 function renderBrandFilters() {
-    const brands = [...new Set(products.map(p => p.brand))];
+    const brands = [...new Set(products.map(p => p.brand).filter(b => b))];
     const container = document.getElementById('brandFilters');
 
     // 全部按钮
@@ -125,13 +128,13 @@ function renderProducts() {
 
     grid.innerHTML = filteredProducts.map(product => `
         <div class="product-card">
-            ${product.image
+            ${product.image && !product.image.startsWith('=DISPIMG')
                 ? `<img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                    <div class="placeholder-image" style="display:none;">暂无图片</div>`
                 : `<div class="placeholder-image">暂无图片</div>`
             }
             <div class="product-info">
-                <span class="product-brand">${product.brand}</span>
+                ${product.brand ? `<span class="product-brand">${product.brand}</span>` : ''}
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-spec">${product.spec} | ${product.boxSpec}</p>
                 <div class="product-prices">
