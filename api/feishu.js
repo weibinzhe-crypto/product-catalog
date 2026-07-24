@@ -1,9 +1,9 @@
 // 飞书 API 配置
 const FEISHU_CONFIG = {
     appId: process.env.FEISHU_APP_ID || "cli_aae9bfef7d3a1d12",
-    appSecret: process.env.FEISHU_APP_SECRET || "99ypIswmLWb7DHMR5sSqEfVc5GkSHrWz",
-    appToken: "Oqhywy8uuikbhpkRwKwcBaANnZe",
-    tableId: "tbl2Culu8VKQacYt"
+    appSecret: process.env.FEISHU_APP_SECRET || "",
+    appToken: process.env.FEISHU_APP_TOKEN || "Oqhywy8uuikbhpkRwKwcBaANnZe",
+    tableId: process.env.FEISHU_TABLE_ID || "tbl2Culu8VKQacYt"
 };
 
 // 缓存 token
