@@ -18,5 +18,5 @@ header input:focus { border-color: #c9a86c; box-shadow: 0 2px 8px rgba(201,168,1
 .product-price { font-size: 18px; font-weight: 700; color: #c9a86c; margin: 6px 0; }
 .product-bottom { font-size: 12px; color: #999; margin-top: 4px; padding-top: 6px; border-top: 1px dashed #f0e6df; }
 .product-bottom span { display: block; margin-bottom: 2px; }
-.product-img { width: 100px; height: 100px; object-fit: contain; background: linear-gradient(135deg, #fdf6f0 0%, #f8f4ef 100%); border-radius: 8px; flex-shrink: 0; border: 1px solid #f0e6df; }
+.product-img { width: 120px; height: 120px; object-fit: contain; background: linear-gradient(135deg, #fdf6f0 0%, #f8f4ef 100%); border-radius: 8px; flex-shrink: 0; border: 1px solid #f0e6df; }
 #loading, #noData { text-align: center; padding: 30px 16px; color: #999; }
