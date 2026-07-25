@@ -14,7 +14,7 @@ fetch('/data/products.json').then(r => r.json()).then(data => {
 document.getElementById('searchInput').oninput = render;
 
 function renderBrands() {
-    let order = ['益肤', '美卿', '绽妍', '芙清', '诗漾'];
+    let order = ['益肤', '美卿', '绽妍', '芙清', '敷尔佳', '诗漾'];
     let brands = order.filter(b => products.some(p => p.brand === b));
     document.getElementById('sidebar').innerHTML =
         brands.map((b, i) => `<button class="sidebar-btn${i === 0 ? ' active' : ''}" onclick="setBrand('${b}',this)">${b}</button>`).join('') +
