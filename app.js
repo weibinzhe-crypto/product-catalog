@@ -38,9 +38,9 @@ function render() {
         return `<div class="product-card">
             <div class="product-info">
                 <div class="product-name">${p.name}</div>
-                <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
-                <div class="product-row"><span class="product-label">价格</span><span class="product-value" style="color:#c9a86c;font-weight:700;font-size:14px;">¥${p.price}</span></div>
-                <div class="product-barcode">条码 ${p.barcode||''}                 箱规 ${p.boxSpec}</div>
+                <div class="product-row">规格  ${p.spec}</div>
+                <div class="product-row">价格  <span style="color:#c9a86c;font-weight:700;font-size:14px;">¥${p.price}</span></div>
+                <div class="product-bottom"><span>条码 ${p.barcode||''}</span><span>箱规 ${p.boxSpec}</span></div>
             </div>
             ${img}
         </div>`;
