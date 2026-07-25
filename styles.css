@@ -14,8 +14,8 @@ header input { width: 100%; padding: 8px 12px; border: 1px solid #e8ddd4; border
 .product-label { color: #999; width: 32px; flex-shrink: 0; }
 .product-value { color: #666; }
 .product-price { font-size: 15px; font-weight: 700; color: #c9a86c; margin-top: 4px; }
-.product-barcode { font-size: 10px; color: #ccc; margin-top: auto; }
+.product-barcode { font-size: 10px; color: #ccc; margin-top: auto; white-space: nowrap; }
 .product-right { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-.product-img { width: 90px; height: 90px; object-fit: contain; background: #faf8f6; border-radius: 6px; }
+.product-img { width: 100px; height: 100px; object-fit: contain; background: #faf8f6; border-radius: 6px; }
 .product-boxspec { font-size: 10px; color: #999; margin-top: 4px; text-align: left; }
 #loading, #noData { text-align: center; padding: 30px 16px; color: #999; }
