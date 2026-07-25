@@ -14,7 +14,7 @@ fetch('/data/products.json').then(r => r.json()).then(data => {
 document.getElementById('searchInput').oninput = render;
 
 function renderBrands() {
-    let order = ['益肤', '美卿', '绽妍', '芙清', '敷尔佳', '润百颜', '创福康', '夸迪', '诗漾'];
+    let order = ['益肤', '美卿', '绽妍', '芙清', '敷尔佳', '润百颜', '创福康', '夸迪', '诗漾', '可复美'];
     let brands = order.filter(b => products.some(p => p.brand === b));
     let otherBrands = [...new Set(products.map(p => p.brand).filter(b => b && !order.includes(b)))].sort();
     brands = brands.concat(otherBrands);
