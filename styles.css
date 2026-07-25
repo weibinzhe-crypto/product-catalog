@@ -14,5 +14,5 @@ header input { width: 100%; padding: 8px 12px; border: 1px solid #e8ddd4; border
 .product-row { font-size: 11px; margin-bottom: 2px; color: #666; }
 .product-price { font-size: 15px; font-weight: 700; color: #c9a86c; margin: 4px 0; }
 .product-bottom { display: flex; gap: 16px; font-size: 10px; color: #ccc; }
-.product-img { width: 80px; height: 80px; object-fit: contain; background: #faf8f6; border-radius: 6px; flex-shrink: 0; }
+.product-img { width: 100px; height: 100px; object-fit: contain; background: #faf8f6; border-radius: 6px; flex-shrink: 0; }
 #loading, #noData { text-align: center; padding: 30px 16px; color: #999; }
