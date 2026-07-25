@@ -46,11 +46,56 @@
   ],
   "headers": [
     {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=10, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.js)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=10, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=10, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=10, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(png|jpg|jpeg))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=86400, immutable"
+        }
+      ]
+    },
+    {
       "source": "/api/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "s-maxage=300, stale-while-revalidate"
+          "value": "s-maxage=60, stale-while-revalidate"
         }
       ]
     }
