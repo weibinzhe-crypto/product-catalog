@@ -39,8 +39,14 @@ function render() {
         return match;
     });
     document.getElementById('noData').style.display = list.length ? 'none' : 'block';
-    document.getElementById('productGrid').innerHTML = list.map(p => `
+    document.getElementById('productGrid').innerHTML = list.map(p => {
+        let imgHtml = '';
+        if (p.image) {
+            imgHtml = `<img src="/api/image?token=${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">`;
+        }
+        return `
         <div class="product-card">
+            ${imgHtml}
             <div class="product-brand">${p.brand || ''}</div>
             <div class="product-name">${p.name}</div>
             <div class="product-spec">${p.spec} | ${p.boxSpec}</div>
@@ -49,5 +55,5 @@ function render() {
                 <span class="price-wholesale">¥${p.price}</span>
             </div>
         </div>
-    `).join('');
+    `}).join('');
 }

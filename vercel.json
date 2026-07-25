@@ -16,6 +16,10 @@
       "dest": "/api/feishu.js"
     },
     {
+      "src": "/api/image",
+      "dest": "/api/image.js"
+    },
+    {
       "src": "/data/(.*)",
       "dest": "/data/$1"
     },

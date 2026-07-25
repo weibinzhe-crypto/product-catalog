@@ -1,8 +1,8 @@
 // 飞书 API 配置
 const FEISHU_CONFIG = {
     appId: process.env.FEISHU_APP_ID || "cli_aae9bfef7d3a1d12",
-    appSecret: process.env.FEISHU_APP_SECRET || "",
-    appToken: process.env.FEISHU_APP_TOKEN || "Oqhywy8uuikbhpkRwKwcBaANnZe",
+    appSecret: process.env.FEISHU_APP_SECRET || "99ypIswmLWb7DHMR5sSqEfVc5GkSHrWz",
+    appToken: process.env.FEISHU_APP_TOKEN || "EvFFbSucaa1ZAQs7acbcrYfmnOh",
     tableId: process.env.FEISHU_TABLE_ID || "tbl2Culu8VKQacYt"
 };
 
@@ -84,14 +84,12 @@ async function getAllRecords() {
 function transformRecord(record) {
     const fields = record.fields;
 
-    // 处理图片字段
-    let imageUrl = "";
+    // 处理图片字段 - 返回 file_token 供代理使用
+    let imageData = "";
     if (fields["图片"] && Array.isArray(fields["图片"]) && fields["图片"].length > 0) {
         const img = fields["图片"][0];
-        if (img.tmp_url) {
-            imageUrl = img.tmp_url;
-        } else if (img.url) {
-            imageUrl = img.url;
+        if (img.file_token) {
+            imageData = img.file_token;
         }
     }
 
@@ -104,7 +102,7 @@ function transformRecord(record) {
         barcode: fields["条码"] || "",
         price: fields["价格"] || 0,
         productCode: fields["商品编码"] || "",
-        image: imageUrl
+        image: imageData
     };
 }
 
