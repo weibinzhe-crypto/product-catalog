@@ -35,6 +35,13 @@ function render() {
     document.getElementById('noData').style.display = list.length ? 'none' : 'block';
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
-        return `<div class="product-card">${img}<div class="product-name">${p.name}</div><div class="product-spec">规格: ${p.spec} | 箱规: ${p.boxSpec}</div><div class="product-barcode">条码: ${p.barcode||'无'}</div><div class="price-row"><span class="price-retail">零售价 ¥${p.retailPrice}</span><span class="price-wholesale">代发价 ¥${p.price}</span></div></div>`;
+        return `<div class="product-card">
+            <div class="product-name">${p.name}</div>
+            <div class="product-row"><span class="label">规格</span><span class="value">${p.spec}</span></div>
+            <div class="product-row"><span class="label">箱规</span><span class="value">${p.boxSpec}</span></div>
+            <div class="product-price">¥${p.price}</div>
+            <div class="product-barcode">${p.barcode||''}</div>
+            ${img}
+        </div>`;
     }).join('');
 }
