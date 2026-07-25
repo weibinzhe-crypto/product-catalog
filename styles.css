@@ -1,18 +1,19 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f5; color: #333; }
-header { background: #fff; padding: 16px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 10; }
-header h1 { font-size: 18px; margin-bottom: 12px; }
-header input { width: 100%; max-width: 400px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
-#brandFilters { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: #fff; border-bottom: 1px solid #eee; }
-.brand-btn { padding: 6px 14px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 13px; cursor: pointer; }
-.brand-btn.active { background: #333; color: #fff; border-color: #333; }
-#productGrid { padding: 12px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.product-card { background: #fff; border-radius: 8px; padding: 12px; }
-.product-img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 8px; background: #fafafa; border-radius: 4px; }
-.product-brand { font-size: 11px; color: #999; }
-.product-name { font-size: 14px; font-weight: 500; margin: 4px 0; }
-.product-spec { font-size: 12px; color: #999; margin-bottom: 8px; }
-.price-row { display: flex; justify-content: space-between; font-size: 13px; }
-.price-retail { color: #999; text-decoration: line-through; }
-.price-wholesale { color: #e74c3c; font-weight: 600; }
-@media (max-width: 480px) { #productGrid { grid-template-columns: 1fr; } }
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #faf8f6; color: #2c2c2c; line-height: 1.5; }
+header { background: linear-gradient(135deg, #fdf6f0 0%, #fff 100%); padding: 20px 16px 16px; text-align: center; border-bottom: 1px solid #f0e6df; position: sticky; top: 0; z-index: 10; }
+header h1 { font-size: 20px; font-weight: 600; color: #8b6914; margin-bottom: 12px; letter-spacing: 2px; }
+header input { width: 100%; max-width: 400px; padding: 10px 14px; border: 1px solid #e8ddd4; border-radius: 24px; font-size: 14px; background: #fff; outline: none; }
+header input:focus { border-color: #c9a86c; }
+#brandFilters { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: #fff; border-bottom: 1px solid #f0e6df; justify-content: center; }
+.brand-btn { padding: 6px 16px; border: 1px solid #e8ddd4; background: #fff; border-radius: 16px; font-size: 13px; color: #666; cursor: pointer; transition: all 0.2s; }
+.brand-btn.active { background: linear-gradient(135deg, #c9a86c 0%, #a67c52 100%); color: #fff; border-color: transparent; }
+#productGrid { padding: 12px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.product-card { background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(139,105,20,0.06); }
+.product-img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; background: linear-gradient(135deg, #fdf6f0 0%, #faf8f6 100%); border-radius: 8px; padding: 8px; }
+.product-brand { font-size: 11px; color: #c9a86c; font-weight: 500; letter-spacing: 1px; }
+.product-name { font-size: 14px; font-weight: 600; color: #2c2c2c; margin: 4px 0; line-height: 1.4; }
+.product-spec { font-size: 12px; color: #999; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #f0e6df; }
+.price-row { display: flex; justify-content: space-between; align-items: center; }
+.price-retail { font-size: 12px; color: #bbb; text-decoration: line-through; }
+.price-wholesale { font-size: 16px; font-weight: 700; color: #c9a86c; }
+@media (max-width: 480px) { #productGrid { grid-template-columns: 1fr; } .product-card { display: flex; gap: 12px; } .product-img { width: 100px; height: 100px; flex-shrink: 0; margin-bottom: 0; } }

@@ -82,7 +82,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(png|jpg|jpeg))",
+      "source": "/data/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
