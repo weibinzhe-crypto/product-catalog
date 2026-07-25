@@ -44,7 +44,7 @@ function render() {
             </div>
             <div class="product-right">
                 ${img}
-                <div class="product-boxspec">${p.boxSpec}</div>
+                <div class="product-boxspec">箱规 ${p.boxSpec}</div>
             </div>
         </div>`;
     }).join('');
