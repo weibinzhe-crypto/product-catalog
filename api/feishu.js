@@ -84,12 +84,15 @@ async function getAllRecords() {
 function transformRecord(record) {
     const fields = record.fields;
 
-    // 处理图片字段 - 返回 file_token 供代理使用
+    // 处理图片 - 使用本地静态图片
     let imageData = "";
     if (fields["图片"] && Array.isArray(fields["图片"]) && fields["图片"].length > 0) {
         const img = fields["图片"][0];
         if (img.file_token) {
-            imageData = img.file_token;
+            // 使用产品名作为图片路径
+            const name = fields["产品"] || "";
+            const safeName = name.replace(/[/\s]/g, "_");
+            imageData = `/data/images/${safeName}.png`;
         }
     }
 
