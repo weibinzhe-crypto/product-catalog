@@ -8,14 +8,14 @@ header input { width: 100%; padding: 8px 12px; border: 1px solid #e8ddd4; border
 .brand-btn.active { background: #8b6914; color: #fff; border-color: #8b6914; }
 #productGrid { padding: 8px; display: flex; flex-direction: column; gap: 8px; }
 .product-card { background: #fff; border-radius: 10px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; gap: 10px; }
-.product-info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.product-left { width: 50px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fdf6f0; border-radius: 8px; padding: 6px; }
+.product-left .brand-text { font-size: 11px; color: #8b6914; font-weight: 600; writing-mode: vertical-rl; text-orientation: mixed; letter-spacing: 2px; }
+.product-info { flex: 1; min-width: 0; }
 .product-name { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 6px; line-height: 1.3; }
 .product-row { display: flex; font-size: 11px; margin-bottom: 2px; }
 .product-label { color: #999; width: 32px; flex-shrink: 0; }
 .product-value { color: #666; }
 .product-price { font-size: 15px; font-weight: 700; color: #c9a86c; margin-top: 4px; }
-.product-barcode { font-size: 10px; color: #ccc; margin-top: auto; white-space: nowrap; }
-.product-right { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-.product-img { width: 100px; height: 100px; object-fit: contain; background: #faf8f6; border-radius: 6px; }
-.product-boxspec { font-size: 10px; color: #999; margin-top: 4px; text-align: left; }
+.product-barcode { font-size: 10px; color: #ccc; margin-top: 4px; white-space: nowrap; }
+.product-img { width: 80px; height: 80px; object-fit: contain; background: #faf8f6; border-radius: 6px; flex-shrink: 0; }
 #loading, #noData { text-align: center; padding: 30px 16px; color: #999; }

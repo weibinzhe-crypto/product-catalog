@@ -36,6 +36,7 @@ function render() {
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
         return `<div class="product-card">
+            <div class="product-left"><span class="brand-text">${p.brand||''}</span></div>
             <div class="product-info">
                 <div class="product-name">${p.name}</div>
                 <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
