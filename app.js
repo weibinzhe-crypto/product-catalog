@@ -13,14 +13,14 @@ document.getElementById('searchInput').oninput = render;
 function renderBrands() {
     let order = ['益肤', '美卿', '绽妍', '诗漾'];
     let brands = order.filter(b => products.some(p => p.brand === b));
-    document.getElementById('sidebar').innerHTML =
-        brands.map((b, i) => `<button class="sidebar-btn${i === 0 ? ' active' : ''}" onclick="setBrand('${b}',this)">${b}</button>`).join('') +
-        '<button class="sidebar-btn" onclick="setBrand(\'all\',this)">全部</button>';
+    document.getElementById('brandFilters').innerHTML =
+        brands.map((b, i) => `<button class="brand-btn${i === 0 ? ' active' : ''}" onclick="setBrand('${b}',this)">${b}</button>`).join('') +
+        '<button class="brand-btn" onclick="setBrand(\'all\',this)">全部</button>';
 }
 
 function setBrand(b, el) {
     brand = b;
-    document.querySelectorAll('.sidebar-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.brand-btn').forEach(btn => btn.classList.remove('active'));
     el.classList.add('active');
     render();
 }
@@ -36,10 +36,12 @@ function render() {
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
         return `<div class="product-card">
-            <div class="product-name">${p.name}</div>
-            <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
-            <div class="product-row"><span class="product-label">价格</span><span class="product-value" style="color:#c9a86c;font-weight:700;font-size:16px;">¥${p.price}</span></div>
-            <div class="product-barcode"><span>条码 ${p.barcode||''}</span><span>箱规 ${p.boxSpec}</span></div>
+            <div class="product-info">
+                <div class="product-name">${p.name}</div>
+                <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
+                <div class="product-row"><span class="product-label">价格</span><span class="product-value" style="color:#c9a86c;font-weight:700;font-size:14px;">¥${p.price}</span></div>
+                <div class="product-barcode">条码 ${p.barcode||''}                 箱规 ${p.boxSpec}</div>
+            </div>
             ${img}
         </div>`;
     }).join('');
