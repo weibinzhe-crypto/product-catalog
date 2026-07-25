@@ -36,16 +36,16 @@ function render() {
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
         return `<div class="product-card">
-            <div class="product-content">
+            <div class="product-info">
                 <div class="product-name">${p.name}</div>
-                <div class="product-info">
-                    <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
-                    <div class="product-row"><span class="product-label">箱规</span><span class="product-value">${p.boxSpec}</span></div>
-                </div>
-                <div class="product-price">¥${p.price}</div>
-                <div class="product-barcode">${p.barcode||''}</div>
+                <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
+                <div class="product-row"><span class="product-label">价格</span><span class="product-value" style="color:#c9a86c;font-weight:700;font-size:14px;">¥${p.price}</span></div>
+                <div class="product-barcode">条码 ${p.barcode||''}</div>
             </div>
-            ${img}
+            <div class="product-right">
+                ${img}
+                <div class="product-boxspec">${p.boxSpec}</div>
+            </div>
         </div>`;
     }).join('');
 }
