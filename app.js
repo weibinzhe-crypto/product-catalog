@@ -1,7 +1,7 @@
 let products = [];
 let brand = '益肤';
 
-fetch('/api/products').then(r => r.json()).then(data => {
+fetch('/data/products.json').then(r => r.json()).then(data => {
     products = data;
     document.getElementById('loading').style.display = 'none';
     renderBrands();
@@ -35,6 +35,6 @@ function render() {
     document.getElementById('noData').style.display = list.length ? 'none' : 'block';
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
-        return `<div class="product-card">${img}<div class="product-brand">${p.brand || ''}</div><div class="product-name">${p.name}</div><div class="product-spec">${p.spec} | ${p.boxSpec}</div><div class="price-row"><span class="price-retail">¥${p.retailPrice}</span><span class="price-wholesale">¥${p.price}</span></div></div>`;
+        return `<div class="product-card">${img}<div class="product-brand">${p.brand||''}</div><div class="product-name">${p.name}</div><div class="product-spec">${p.spec} | ${p.boxSpec}</div><div class="price-row"><span class="price-retail">¥${p.retailPrice}</span><span class="price-wholesale">¥${p.price}</span></div></div>`;
     }).join('');
 }
