@@ -29,7 +29,11 @@ function render() {
     let kw = document.getElementById('searchInput').value.toLowerCase();
     let list = products.filter(p => {
         let match = brand === 'all' || p.brand === brand;
-        if (kw) match = match && (p.name.toLowerCase().includes(kw) || (p.barcode && p.barcode.includes(kw)));
+        if (kw) match = match && (
+            p.name.toLowerCase().includes(kw) ||
+            p.brand.toLowerCase().includes(kw) ||
+            (p.barcode && p.barcode.includes(kw))
+        );
         return match;
     });
     document.getElementById('noData').style.display = list.length ? 'none' : 'block';
