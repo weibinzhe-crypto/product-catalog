@@ -37,8 +37,10 @@ function render() {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
         return `<div class="product-card">
             <div class="product-name">${p.name}</div>
-            <div class="product-row"><span class="label">规格</span><span class="value">${p.spec}</span></div>
-            <div class="product-row"><span class="label">箱规</span><span class="value">${p.boxSpec}</span></div>
+            <div class="product-info">
+                <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
+                <div class="product-row"><span class="product-label">箱规</span><span class="product-value">${p.boxSpec}</span></div>
+            </div>
             <div class="product-price">¥${p.price}</div>
             <div class="product-barcode">${p.barcode||''}</div>
             ${img}
