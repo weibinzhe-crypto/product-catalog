@@ -35,6 +35,6 @@ function render() {
     document.getElementById('noData').style.display = list.length ? 'none' : 'block';
     document.getElementById('productGrid').innerHTML = list.map(p => {
         let img = p.image ? `<img src="${p.image}" class="product-img" loading="lazy" onerror="this.style.display='none'">` : '';
-        return `<div class="product-card">${img}<div class="product-brand">${p.brand||''}</div><div class="product-name">${p.name}</div><div class="product-spec">${p.spec} | ${p.boxSpec}</div><div class="price-row"><span class="price-retail">¥${p.retailPrice}</span><span class="price-wholesale">¥${p.price}</span></div></div>`;
+        return `<div class="product-card">${img}<div class="product-name">${p.name}</div><div class="product-spec">规格: ${p.spec} | 箱规: ${p.boxSpec}</div><div class="product-barcode">条码: ${p.barcode||'无'}</div><div class="price-row"><span class="price-retail">零售价 ¥${p.retailPrice}</span><span class="price-wholesale">代发价 ¥${p.price}</span></div></div>`;
     }).join('');
 }
