@@ -1,6 +1,9 @@
 let products = [];
 let brand = '益肤';
 
+// Show skeleton loading
+document.getElementById('productGrid').innerHTML = Array(6).fill('<div class="product-card skeleton"><div class="skeleton-info"><div class="skeleton-line long"></div><div class="skeleton-line short"></div><div class="skeleton-line short"></div></div><div class="skeleton-img"></div></div>').join('');
+
 fetch('/data/products.json').then(r => r.json()).then(data => {
     products = data;
     document.getElementById('loading').style.display = 'none';
