@@ -40,12 +40,9 @@ function render() {
                 <div class="product-name">${p.name}</div>
                 <div class="product-row"><span class="product-label">规格</span><span class="product-value">${p.spec}</span></div>
                 <div class="product-row"><span class="product-label">价格</span><span class="product-value" style="color:#c9a86c;font-weight:700;font-size:14px;">¥${p.price}</span></div>
-                <div class="product-barcode">条码 ${p.barcode||''}</div>
+                <div class="product-barcode">条码 ${p.barcode||''}    箱规 ${p.boxSpec}</div>
             </div>
-            <div class="product-right">
-                ${img}
-                <div class="product-boxspec">箱规 ${p.boxSpec}</div>
-            </div>
+            ${img}
         </div>`;
     }).join('');
 }
