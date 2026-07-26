@@ -58,8 +58,7 @@ function S(el,b){B=b;document.querySelectorAll('.sidebar-btn').forEach(function(
 function R(){
 var kw=document.getElementById('searchInput').value.toLowerCase();
 var g=P.filter(function(p){
-var m=B==='all'||p.brand===B;
-if(kw)m=m&&(p.name.toLowerCase().indexOf(kw)>=0||p.brand.toLowerCase().indexOf(kw)>=0||(p.barcode&&p.barcode.indexOf(kw)>=0));
+var m=kw?(p.name.toLowerCase().indexOf(kw)>=0||p.brand.toLowerCase().indexOf(kw)>=0||(p.barcode&&p.barcode.indexOf(kw)>=0)):(B==='all'||p.brand===B);
 return m});
 document.getElementById('noData').style.display=g.length?'none':'block';
 document.getElementById('productGrid').scrollTop=0;
