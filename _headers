@@ -1,0 +1,9 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/data/products.json
+  Cache-Control: public, max-age=60, s-maxage=60
+
+/data/images/*
+  Cache-Control: public, max-age=86400, s-maxage=86400, immutable
