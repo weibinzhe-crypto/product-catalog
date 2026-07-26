@@ -61,6 +61,7 @@ var m=B==='all'||p.brand===B;
 if(kw)m=m&&(p.name.toLowerCase().indexOf(kw)>=0||p.brand.toLowerCase().indexOf(kw)>=0||(p.barcode&&p.barcode.indexOf(kw)>=0));
 return m});
 document.getElementById('noData').style.display=g.length?'none':'block';
+document.getElementById('productGrid').scrollTop=0;
 document.getElementById('productGrid').innerHTML=g.map(function(p){
 var img=p.image?'<img src="'+p.image+'" class="product-img" loading="lazy" onerror="this.style.display=\'none\'">':'';
 return '<div class="product-card"><div class="product-info"><div class="product-name">'+p.name+'</div><div class="product-row">规格 '+p.spec+'</div><div class="product-row">价格 <span class="product-price">¥'+p.price+'</span></div><div class="product-bottom"><span>条码 '+(p.barcode||'')+'</span><span>箱规 '+p.boxSpec+'</span></div></div>'+img+'</div>'
